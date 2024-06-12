@@ -15,9 +15,14 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
     stages {
-          stage('Build') {
+        stage('Build') {
             steps {
                 echo 'Im in Build Stage'
+            }
+        }
+        stage('Reading Params') {
+            steps {
+                echo "Param name: ${params.PERSON}"
             }
         }
     }
